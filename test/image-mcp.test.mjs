@@ -548,6 +548,7 @@ test('getCapabilities reports async image edit support and queue limits', () => 
   assert.deepEqual(caps.mask_input_fields, ['mask', 'mask_path']);
   assert.equal(caps.supports_custom_size, true);
   assert.deepEqual(caps.size_presets, ['1K', '2K', '4K', 'auto']);
+  assert.match(caps.output_size_contract, /delivered output size tiers/);
   assert.ok(caps.sizes.includes('3840x2160'));
   assert.ok(caps.sizes.includes('2160x3840'));
   assert.ok(caps.aspect_ratios.includes('9:16'));
